@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int pow(int m,int n){
+    if(n==0)
+        return 1;
+    if(n%2==0)
+        return pow((m*m),n/2);          // Other way: But will occupy more space in stack , as the number of calls are more in this case.
+    else                                // return pow(m,n-1)*m
+        return m*pow((m*m),n/2);
+}
+int main(){
+    int m=2;
+    int n=5;
+    cout<<pow(m,n)<<endl;
+}
