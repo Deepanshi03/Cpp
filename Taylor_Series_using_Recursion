@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+double e(int x,int n){
+    static double pow=1,fact=1;
+    if(n==0){
+        return 1;
+    }
+    else{
+        double r=e(x,n-1);
+        pow=pow*x;
+        fact=fact*n;
+        return r+pow/fact;
+    }
+    
+}
+int main(){
+    int x=1;
+    int n=10;
+    cout<<e(x,n)<<endl;
+}
